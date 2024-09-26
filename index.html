@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mis Datos de MongoDB</title>
+</head>
+<body>
+  <ul id="user-list"></ul>
+  <script>
+    fetch('/.netlify/functions/get-data')
+      .then(response => response.json())
+      .then(data => {
+        const userList = document.getElementById('user-list');
+        data.forEach(user => {
+          const li = document.createElement('li');
+          li.textContent = user.name; // Asume que tienes un campo 'name' en tus documentos
+          userList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  </script>
+</body>
+</html>

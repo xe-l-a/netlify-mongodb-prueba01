@@ -6,7 +6,7 @@
 <body>
   <ul id="user-list"></ul>
   <script>
-    fetch('/.netlify/functions/get-data')
+    fetch('/.netlify/functions/hello')
       .then(response => response.json())
       .then(data => {
         const userList = document.getElementById('user-list');

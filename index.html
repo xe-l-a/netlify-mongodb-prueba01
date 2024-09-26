@@ -12,7 +12,7 @@
         const userList = document.getElementById('user-list');
         data.forEach(user => {
           const li = document.createElement('li');
-          li.textContent = user.name; // Asume que tienes un campo 'name' en tus documentos
+          li.textContent = user.title; // Asume que tienes un campo 'name' en tus documentos
           userList.appendChild(li);
         });
       })
